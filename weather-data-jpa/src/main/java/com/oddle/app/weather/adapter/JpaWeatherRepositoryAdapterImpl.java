@@ -59,7 +59,7 @@ public class JpaWeatherRepositoryAdapterImpl implements JpaWeatherRepositoryAdap
      */
     @Override
     public List<WeatherModel> getHistoricalWeather(LocalDateTime from, LocalDateTime to) {
-        return jpaWeatherRepository.findByDateBetween(from, to).stream().map(p -> jpaWeatherMapper.mapToWeatherModel(p)).collect(Collectors.toList());
+        return jpaWeatherRepository.findByDateBetween(from, to).stream().map(jpaWeatherMapper::mapToWeatherModel).collect(Collectors.toList());
     }
 
     /**
