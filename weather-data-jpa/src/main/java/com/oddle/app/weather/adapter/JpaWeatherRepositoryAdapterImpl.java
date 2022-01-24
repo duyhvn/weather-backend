@@ -74,6 +74,12 @@ public class JpaWeatherRepositoryAdapterImpl implements JpaWeatherRepositoryAdap
         jpaWeatherRepository.deleteAllByDateBetween(from, to);
     }
 
+    @Override
+    @Transactional
+    public void deleteHistoricalWeatherById(Long id) {
+        jpaWeatherRepository.deleteById(id);
+    }
+
     /**
      * Update an existing weather record
      *

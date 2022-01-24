@@ -74,6 +74,11 @@ public class WeatherServiceImpl implements WeatherService {
         jpaWeatherRepositoryAdapter.deleteHistoricalWeather(from, to);
     }
 
+    @Override
+    public void deleteHistoricalWeatherById(Long id) {
+        jpaWeatherRepositoryAdapter.deleteHistoricalWeatherById(id);
+    }
+
     /**
      * Update an existing weather record
      *
