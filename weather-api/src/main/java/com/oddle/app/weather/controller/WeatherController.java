@@ -58,7 +58,7 @@ public class WeatherController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/api/weather/deleteHistoricalWeather/{id}")
+    @DeleteMapping(value = "/api/weather/deleteHistoricalWeatherById/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<?> deleteHistoricalWeather(@PathVariable("id") Long id) {
         weatherService.deleteHistoricalWeatherById(id);
