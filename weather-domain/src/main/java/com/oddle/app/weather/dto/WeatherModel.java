@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class WeatherModel {
-
+    Long id;
     LocalDateTime date;
     // Temperature
     float temp;
@@ -21,4 +21,5 @@ public class WeatherModel {
     float tempMax;
     float pressure;
     float humidity;
+    CityModel city;
 }

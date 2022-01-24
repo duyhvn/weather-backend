@@ -39,7 +39,7 @@ public class WeatherController {
     }
 
     @PostMapping(value = "/api/weather", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CurrentWeatherModel> createWeather(@RequestParam(required = true) String city) {
+    public ResponseEntity<CurrentWeatherModel> createWeather(@RequestBody(required = true) String city) {
         return new ResponseEntity<>(weatherService.saveWeather(city), HttpStatus.CREATED);
     }
 
