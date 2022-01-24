@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author duy.huynh
  */
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 public class WeatherController {
 
@@ -55,6 +55,13 @@ public class WeatherController {
     public ResponseEntity<?> deleteHistoricalWeather(@RequestParam(required = true) String from, @RequestParam(required = true) String to) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         weatherService.deleteHistoricalWeather(LocalDateTime.parse(from, formatter), LocalDateTime.parse(to, formatter));
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/api/weather/deleteHistoricalWeather/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<?> deleteHistoricalWeather(@PathVariable("id") Long id) {
+        weatherService.deleteHistoricalWeatherById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -45,6 +45,7 @@ public interface WeatherService {
      */
     void deleteHistoricalWeather(LocalDateTime from, LocalDateTime to);
 
+    void deleteHistoricalWeatherById(Long id);
     /**
      * Update an existing weather record
      *
