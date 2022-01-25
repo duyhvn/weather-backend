@@ -1,11 +1,7 @@
 package com.oddle.app.weather.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * This class is presentation the observations from the current weather.
@@ -16,6 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class WeatherMainDTO {
     private double temp;
     @JsonProperty("feels_like")

@@ -37,6 +37,12 @@ public interface JpaWeatherRepositoryAdapter {
     void deleteHistoricalWeather(LocalDateTime from, LocalDateTime to);
 
     /**
+     * Delete an existing weather record by id
+     * @param id
+     */
+    void deleteHistoricalWeatherById(Long id);
+
+    /**
      * Update an existing weather record
      * @param id
      * @param weather
