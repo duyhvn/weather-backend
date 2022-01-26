@@ -59,7 +59,7 @@ public class JpaWeatherRepositoryAdapterImpl implements JpaWeatherRepositoryAdap
      */
     @Override
     public List<WeatherModel> getHistoricalWeather(LocalDateTime from, LocalDateTime to) {
-        return jpaWeatherRepository.findByDateBetween(from, to).stream().map(p -> jpaWeatherMapper.mapToWeatherModel(p)).collect(Collectors.toList());
+        return jpaWeatherRepository.findByDateBetween(from, to).stream().map(jpaWeatherMapper::mapToWeatherModel).collect(Collectors.toList());
     }
 
     /**
@@ -72,6 +72,12 @@ public class JpaWeatherRepositoryAdapterImpl implements JpaWeatherRepositoryAdap
     @Transactional
     public void deleteHistoricalWeather(LocalDateTime from, LocalDateTime to) {
         jpaWeatherRepository.deleteAllByDateBetween(from, to);
+    }
+
+    @Override
+    @Transactional
+    public void deleteHistoricalWeatherById(Long id) {
+        jpaWeatherRepository.deleteById(id);
     }
 
     /**

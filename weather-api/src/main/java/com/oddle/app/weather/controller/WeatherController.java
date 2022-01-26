@@ -8,14 +8,7 @@ import com.oddle.app.weather.service.WeatherService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -27,6 +20,7 @@ import java.util.List;
  *
  * @author duy.huynh
  */
+@CrossOrigin(origins = "*")
 @RestController
 public class WeatherController {
 
@@ -45,7 +39,7 @@ public class WeatherController {
     }
 
     @PostMapping(value = "/api/weather", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CurrentWeatherModel> createWeather(@RequestParam(required = true) String city) {
+    public ResponseEntity<CurrentWeatherModel> createWeather(@RequestBody(required = true) String city) {
         return new ResponseEntity<>(weatherService.saveWeather(city), HttpStatus.CREATED);
     }
 
@@ -61,6 +55,13 @@ public class WeatherController {
     public ResponseEntity<?> deleteHistoricalWeather(@RequestParam(required = true) String from, @RequestParam(required = true) String to) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         weatherService.deleteHistoricalWeather(LocalDateTime.parse(from, formatter), LocalDateTime.parse(to, formatter));
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/api/weather/deleteHistoricalWeather/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<?> deleteHistoricalWeather(@PathVariable("id") Long id) {
+        weatherService.deleteHistoricalWeatherById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
