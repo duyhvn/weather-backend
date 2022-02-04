@@ -2,7 +2,7 @@ package com.oddle.app.weather.service;
 
 import com.oddle.app.weather.mapper.WeatherMapper;
 import com.oddle.app.weather.dto.CurrentWeatherDTO;
-import com.oddle.app.weather.dto.CurrentWeatherModel;
+import com.oddle.app.weather.model.CurrentWeatherModel;
 import com.oddle.app.weather.repository.RestOpenWeatherMapRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

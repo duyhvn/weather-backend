@@ -1,7 +1,7 @@
 package com.oddle.app.weather.repository;
 
-import com.oddle.app.weather.dto.CityModel;
-import com.oddle.app.weather.dto.WeatherModel;
+import com.oddle.app.weather.model.CityModel;
+import com.oddle.app.weather.model.WeatherModel;
 
 import java.time.LocalDateTime;
 import java.util.List;

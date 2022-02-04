@@ -1,4 +1,4 @@
-package com.oddle.app.weather.dto;
+package com.oddle.app.weather.model;
 
 import lombok.AccessLevel;
 import lombok.Builder;

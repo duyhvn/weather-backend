@@ -1,7 +1,7 @@
 package com.oddle.app.weather.service;
 
-import com.oddle.app.weather.dto.CurrentWeatherModel;
-import com.oddle.app.weather.dto.WeatherModel;
+import com.oddle.app.weather.model.CurrentWeatherModel;
+import com.oddle.app.weather.model.WeatherModel;
 
 import java.time.LocalDateTime;
 import java.util.List;

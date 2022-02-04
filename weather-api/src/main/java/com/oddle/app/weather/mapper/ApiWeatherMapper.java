@@ -1,7 +1,7 @@
 package com.oddle.app.weather.mapper;
 
 import com.oddle.app.weather.dto.WeatherDTO;
-import com.oddle.app.weather.dto.WeatherModel;
+import com.oddle.app.weather.model.WeatherModel;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

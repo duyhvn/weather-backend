@@ -1,6 +1,10 @@
 package com.oddle.app.weather.mapper;
 
 import com.oddle.app.weather.dto.*;
+import com.oddle.app.weather.model.CityModel;
+import com.oddle.app.weather.model.CurrentWeatherModel;
+import com.oddle.app.weather.model.WeatherDescModel;
+import com.oddle.app.weather.model.WeatherModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

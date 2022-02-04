@@ -1,6 +1,6 @@
 package com.oddle.app.weather.repository;
 
-import com.oddle.app.weather.dto.CurrentWeatherModel;
+import com.oddle.app.weather.model.CurrentWeatherModel;
 
 /**
  * The service response for consuming RESTFull API from openweathermap.org

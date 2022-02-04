@@ -1,7 +1,7 @@
-import com.oddle.app.weather.dto.CityModel;
-import com.oddle.app.weather.dto.CurrentWeatherModel;
-import com.oddle.app.weather.dto.WeatherDescModel;
-import com.oddle.app.weather.dto.WeatherModel;
+import com.oddle.app.weather.model.CityModel;
+import com.oddle.app.weather.model.CurrentWeatherModel;
+import com.oddle.app.weather.model.WeatherDescModel;
+import com.oddle.app.weather.model.WeatherModel;
 import com.oddle.app.weather.repository.JpaWeatherRepositoryAdapter;
 import com.oddle.app.weather.repository.RestOpenWeatherMapRepository;
 import com.oddle.app.weather.service.WeatherService;

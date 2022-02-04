@@ -2,8 +2,8 @@ package com.oddle.app.weather.controller;
 
 import com.oddle.app.weather.dto.WeatherDTO;
 import com.oddle.app.weather.mapper.ApiWeatherMapper;
-import com.oddle.app.weather.dto.CurrentWeatherModel;
-import com.oddle.app.weather.dto.WeatherModel;
+import com.oddle.app.weather.model.CurrentWeatherModel;
+import com.oddle.app.weather.model.WeatherModel;
 import com.oddle.app.weather.service.WeatherService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
